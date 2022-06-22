@@ -53,6 +53,13 @@ if(strlen($name) > 3 && filter_var($email, FILTER_VALIDATE_EMAIL) && filter_var(
     <title>Snacks</title>
 </head>
 <body>
+    <h1>MyForm</h1>
+    <form action="">
+        <input type="text" name="name" placeholder="Inserisci il tuo nome">
+        <input type="email" name="email" placeholder="Inserisci la tua e-mail">
+        <input type="text" name="age" placeholder="Inserisci la tua età">
+        <button type="submit">Invia</button>
+    </form>
     <p><strong>Nome</strong>: <?php echo $name?></p>
     <p><strong>Email</strong>: <?php echo $email?></p>
     <p><strong>Età</strong>: <?php echo $age?></p>
