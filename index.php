@@ -23,12 +23,6 @@ $matches = [
     ]
 ];
 
-for($i = 0; $i < count($matches); $i++){
-    echo $matches[$i]['team_one'].' - '.$matches[$i]['team_two'].' | '.$matches[$i]['team_one_points'].' - '.$matches[$i]['team_two_points']."<br>";
-}
-
-echo '<br><br><br>';
-
 //     SNACK 2 
 
 $name = $_GET["name"];
@@ -53,7 +47,12 @@ if(strlen($name) > 3 && filter_var($email, FILTER_VALIDATE_EMAIL) && filter_var(
     <title>Snacks</title>
 </head>
 <body>
-    <h1>MyForm</h1>
+    <h2>Matches score:</h2>
+    <?php for($i = 0; $i < count($matches); $i++):?>
+        <p><?= $matches[$i]['team_one'].' - '.$matches[$i]['team_two'].' | '.$matches[$i]['team_one_points'].' - '.$matches[$i]['team_two_points'] ?></p>
+    <?php endfor;?>
+    
+    <h2>MyForm</h2>
     <form action="">
         <input type="text" name="name" placeholder="Inserisci il tuo nome">
         <input type="email" name="email" placeholder="Inserisci la tua e-mail">
